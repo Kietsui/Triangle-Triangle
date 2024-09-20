@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3878978393452796097}
   - component: {fileID: 7623649257644514118}
   - component: {fileID: 3775757351794021459}
+  - component: {fileID: 1332005818516038289}
   - component: {fileID: 5555461194732225180}
   - component: {fileID: 195664595660574845}
   - component: {fileID: 3659475406426454678}
@@ -101,14 +102,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  speedBoost: 35
-  acceleration: 8
+  speedBoost: 41
+  acceleration: 7.5
   rotationSpeed: 750
   drag: 0.95
-  chargeSpeed: 65
+  chargeSpeed: 57
   chargeDuration: 0.33
-  chargeCooldown: 3
-  windupTime: 0.75
+  chargeCooldown: 1.5
+  windupTime: 0.55
+--- !u!114 &1332005818516038289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4906549879255980807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd40a901fcd0209499483cb4ef5fcae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDuration: 0.2
+  playerHp: 0
+  playerMaxHp: 5
+  playerHpText: {fileID: 0}
+  playerScoreText: {fileID: 0}
+  playerScore: 0
 --- !u!96 &5555461194732225180
 TrailRenderer:
   serializedVersion: 3

@@ -6,12 +6,14 @@ public class BoxDamage : MonoBehaviour
     private BoxSpawner boxSpawner; // Reference to the BoxSpawner
     public AudioClip explosionSound;
     private AudioSource audioSource;
+    private PlayerManager playerManager;
 
     private void Start()
     {
         // Find the BoxSpawner in the scene
         boxSpawner = FindObjectOfType<BoxSpawner>();
         audioSource = GetComponent<AudioSource>();
+        playerManager = FindAnyObjectByType<PlayerManager>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -31,6 +33,7 @@ public class BoxDamage : MonoBehaviour
                 {
                     Instantiate(breakEffect, transform.position, Quaternion.identity).Play();
                     PlayExplosionSound();
+                    playerManager.IncrementScore(1);
                 }
                 Destroy(gameObject); // Destroy the game object after playing the effect
                 boxSpawner.BoxDestroyed(); // Notify the spawner that a box has been destroyed
